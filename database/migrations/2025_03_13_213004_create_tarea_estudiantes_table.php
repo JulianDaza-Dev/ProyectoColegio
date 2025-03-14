@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tarea_estudiantes', function (Blueprint $table) {
             $table->id();
             $table->string('estudiante');
-            $table->foreignId('tarea_id')->constrained('tareas')->onDelete('cascade');
+            $table->foreignId('tarea_id')->constrained(table: 'tareas')->onDelete('cascade');
             $table->integer('estado');
             $table->timestamps();
         });
